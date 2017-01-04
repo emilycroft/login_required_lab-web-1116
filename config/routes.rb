@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  root 'sessions#new'
+  resources :sessions, only: :create
+  # resources :secrets, only: [:index]
+  get '/secrets' => 'secrets#show'
+  delete '/sessions' => 'sessions#destroy'
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
